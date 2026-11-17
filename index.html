@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>吃瓜51在线每日大赛-赛事日程与热点追踪</title>
+<meta name="description" content="吃瓜51在线每日大赛每日赛程与参赛作品更新，整理热门话题、选手榜单、规则说明与观赛指南，帮你快速找到当天可追的场次和值得回看的对局，也提供社区讨论与示例数据说明。">
+<meta name="keywords" content="吃瓜51在线每日大赛">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e8532a'/%3E%3Cpath d='M16 40c6-16 26-16 32 0' stroke='%23fff' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='24' cy='26' r='4' fill='%23fff'/%3E%3Ccircle cx='40' cy='26' r='4' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --main:#e8532a; --main-dark:#b93d1c; --sub:#1f7a6d; --ink:#1d2026; --ink-2:#4a5059;
+  --muted:#777f8a; --line:#e6e2db; --bg:#fbf8f3; --card:#ffffff; --soft:#f3efe8;
+  --warn:#b7791f; --radius:12px; --radius-sm:8px;
+  --shadow:0 2px 10px rgba(29,32,38,.06); --shadow-lift:0 6px 20px rgba(29,32,38,.10);
+  --gap:20px; --max:1160px;
+  --fs-h1:clamp(26px,3.4vw,40px); --fs-h2:clamp(20px,2.2vw,26px); --fs-h3:17px;
+  --fs-body:15.5px; --fs-sm:13.5px; --lh:1.8;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:112px}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
+  color:var(--ink);background:var(--bg);font-size:var(--fs-body);line-height:var(--lh);-webkit-font-smoothing:antialiased}
+a{color:var(--main-dark);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{line-height:1.35;margin:0 0 .5em}
+h2{font-size:var(--fs-h2)}
+h3{font-size:var(--fs-h3)}
+p{margin:0 0 .9em}
+ul,ol{margin:0 0 .9em;padding-left:1.25em}
+:focus-visible{outline:3px solid var(--sub);outline-offset:2px;border-radius:4px}
+.skip{position:absolute;left:-9999px;top:0}
+.skip:focus{left:8px;top:8px;background:#fff;padding:8px 12px;z-index:999;border:2px solid var(--sub)}
+/* 吸顶组合：公告条 + 页头 */
+.sticky-wrap{position:sticky;top:0;z-index:60}
+.notice{background:var(--ink);color:#f1ece4;font-size:13.5px;padding:7px 16px;display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap}
+.notice .tag{background:var(--main);color:#fff;font-weight:700;padding:1px 8px;border-radius:999px;font-size:12px;letter-spacing:.5px}
+.notice a{color:#ffd9c9;text-decoration:underline}
+header.site{background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+.hd-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;gap:18px;padding:10px 16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--ink);white-space:nowrap}
+.brand:hover{text-decoration:none}
+.brand svg{width:38px;height:38px;flex:0 0 auto}
+.brand .b-sub{display:block;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:1px}
+nav.mainnav{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+nav.mainnav a{padding:7px 11px;border-radius:999px;font-size:14px;color:var(--ink-2);font-weight:600}
+nav.mainnav a:hover,nav.mainnav a:focus-visible{background:var(--soft);color:var(--main-dark);text-decoration:none}
+.hd-tools{display:flex;align-items:center;gap:8px}
+.search{display:flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:var(--soft);padding:4px 6px 4px 12px}
+.search input{border:0;background:transparent;font-size:14px;width:150px;outline:none;color:var(--ink);font-family:inherit}
+.search button{border:0;background:var(--main);color:#fff;border-radius:999px;padding:6px 13px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+.menu-btn{display:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;color:var(--ink);cursor:pointer;font-family:inherit}
+.search-result{max-width:var(--max);margin:0 auto;padding:0 16px;font-size:13.5px;color:var(--ink-2)}
+.search-result:not(:empty){padding:10px 16px 14px;border-top:1px dashed var(--line)}
+.search-result b{color:var(--main-dark)}
+/* 首屏 */
+main{max-width:var(--max);margin:0 auto;padding:0 16px}
+.hero{padding:34px 0 10px;display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center}
+.hero .hero-badge{display:inline-flex;align-items:center;gap:7px;background:#fdece4;color:var(--main-dark);font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px;margin-bottom:14px}
+.hero h1{font-size:var(--fs-h1);letter-spacing:-.5px;margin-bottom:12px}
+.hero p.lead{font-size:16.5px;color:var(--ink-2);max-width:36em}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 16px}
+.btn{display:inline-block;padding:11px 22px;border-radius:999px;font-weight:700;font-size:15px}
+.btn-primary{background:var(--main);color:#fff;box-shadow:0 4px 14px rgba(232,83,42,.3)}
+.btn-primary:hover{text-decoration:none;background:var(--main-dark)}
+.btn-ghost{border:1.5px solid var(--line);color:var(--ink);background:#fff}
+.btn-ghost:hover{text-decoration:none;border-color:var(--main);color:var(--main-dark)}
+.hero-stats{display:flex;gap:22px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:14px}
+.hero-stats div{font-size:13px;color:var(--muted)}
+.hero-stats b{display:block;font-size:21px;color:var(--ink);font-weight:800;letter-spacing:-.5px}
+.hero-art{position:relative;min-height:300px}
+.hero-art svg{width:100%;height:auto;display:block}
+.hero-art .float-card{position:absolute;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-lift);padding:9px 13px;font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.45}
+.hero-art .fc1{top:6%;right:-4px}
+.hero-art .fc2{bottom:10%;left:-6px}
+.hero-art .fc1 span,.hero-art .fc2 span{display:block;font-weight:500;color:var(--muted);font-size:11.5px}
+/* 通用板块 */
+section.block{padding:30px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.sec-head h2{margin:0}
+.sec-head .hint{font-size:13px;color:var(--muted)}
+.sec-head .more{margin-left:auto;font-size:13.5px;font-weight:700}
+.kicker{font-size:12.5px;font-weight:800;letter-spacing:1.5px;color:var(--sub);text-transform:uppercase;margin-bottom:6px}
+/* 概览 */
+.overview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap)}
+.ov-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.ov-card b{display:block;font-size:22px;color:var(--main-dark);letter-spacing:-.5px}
+.ov-card span{font-size:13px;color:var(--muted)}
+.ov-card p{font-size:13.5px;color:var(--ink-2);margin:8px 0 0}
+/* 精选网格 */
+.grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+.card figure{margin:0;aspect-ratio:16/9;overflow:hidden;background:var(--soft)}
+.card figure img{width:100%;height:100%;object-fit:cover}
+.card .cbody{padding:14px 16px 16px;display:flex;flex-direction:column;gap:7px;flex:1}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap}
+.card h3{margin:0;font-size:16.5px}
+.card h3 a{color:var(--ink)}
+.card h3 a:hover{color:var(--main-dark);text-decoration:none}
+.card p{font-size:13.5px;color:var(--ink-2);margin:0}
+.pill{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:999px;background:#fdece4;color:var(--main-dark)}
+.pill.g{background:#e4f2ee;color:var(--sub)}
+.pill.y{background:#fbf1dc;color:var(--warn)}
+/* 最新更新紧凑列表 */
+.updates{display:grid;grid-template-columns:1fr 1fr;gap:0 32px}
+.upd{display:flex;gap:14px;padding:11px 0;border-bottom:1px dashed var(--line);align-items:flex-start}
+.upd time{flex:0 0 76px;font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:1px}
+.upd .u-t{font-size:14.5px}
+.upd .u-t a{color:var(--ink);font-weight:600}
+.upd .u-t a:hover{color:var(--main-dark)}
+.upd .u-d{font-size:12.5px;color:var(--muted)}
+/* 分类入口 标签索引 */
+.cat-index{display:flex;flex-wrap:wrap;gap:10px}
+.cat-index a{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:14px;font-weight:600;color:var(--ink)}
+.cat-index a:hover{border-color:var(--main);color:var(--main-dark);text-decoration:none}
+.cat-index a em{font-style:normal;font-size:12px;color:var(--muted);font-weight:500}
+/* 深度解析 */
+.depth{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:34px}
+.article h2{margin-top:0}
+.article h3{color:var(--main-dark);margin-top:1.4em}
+.article blockquote{margin:1.1em 0;padding:12px 16px;background:var(--soft);border-left:4px solid var(--sub);border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:14.5px;color:var(--ink-2)}
+.article table{width:100%;border-collapse:collapse;font-size:13.5px;margin:12px 0}
+.article th,.article td{border:1px solid var(--line);padding:8px 10px;text-align:left}
+.article th{background:var(--soft);font-weight:700}
+.aside-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;margin-bottom:18px}
+.aside-card h3{font-size:15px;margin-bottom:10px}
+.timeline{list-style:none;padding:0;margin:0;position:relative}
+.timeline li{position:relative;padding-left:20px;padding-bottom:13px;font-size:13.5px;color:var(--ink-2)}
+.timeline li:before{content:"";position:absolute;left:4px;top:7px;width:8px;height:8px;border-radius:50%;background:var(--main)}
+.timeline li:after{content:"";position:absolute;left:7px;top:17px;bottom:0;width:2px;background:var(--line)}
+.timeline li:last-child{padding-bottom:0}
+.timeline li:last-child:after{display:none}
+.timeline b{color:var(--ink);display:block;font-size:13.5px}
+.fact-check{font-size:13px;border:1px solid var(--line);border-radius:var(--radius-sm);padding:12px;background:#fff}
+.fact-check dt{font-weight:700;color:var(--ink);margin-top:8px}
+.fact-check dt:first-child{margin-top:0}
+.fact-check dd{margin:2px 0 0;color:var(--ink-2)}
+/* 体验指南 编号步骤 */
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap);list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 16px 16px 58px;position:relative;font-size:14px;color:var(--ink-2)}
+.steps li:before{content:counter(s);position:absolute;left:16px;top:15px;width:28px;height:28px;border-radius:50%;background:var(--sub);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+.steps li b{display:block;color:var(--ink);font-size:15px;margin-bottom:3px}
+/* FAQ */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;align-items:start}
+details{background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:0 16px}
+details summary{cursor:pointer;font-weight:700;font-size:14.5px;padding:13px 0;list-style:none;position:relative;padding-right:26px}
+details summary::-webkit-details-marker{display:none}
+details summary:after{content:"+";position:absolute;right:0;top:11px;font-size:20px;color:var(--main);font-weight:400}
+details[open] summary:after{content:"–"}
+details .ans{font-size:13.5px;color:var(--ink-2);padding-bottom:13px}
+/* 评论 */
+.comments{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+.cmt{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.cmt .who{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+.avatar{width:30px;height:30px;border-radius:50%;background:var(--sub);color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.avatar.o{background:var(--main)}.avatar.y{background:var(--warn)}.avatar.g{background:#5c6ac4}
+.cmt .who b{font-size:13.5px}
+.cmt .who span{font-size:11.5px;color:var(--muted)}
+.cmt p{font-size:13.5px;color:var(--ink-2);margin:0}
+.cmt .ref{font-size:12px;color:var(--main-dark);font-weight:600;display:block;margin-top:7px}
+/* 资讯 */
+.news{display:grid;grid-template-columns:1fr 1fr;gap:14px 24px}
+.news article{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.news article .n-meta{font-size:12px;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;margin-bottom:5px}
+.news article h3{font-size:15px;margin:0 0 5px}
+.news article h3 a{color:var(--ink)}
+.news article p{font-size:13.5px;color:var(--ink-2);margin:0}
+/* 相关推荐 标签 */
+.rec-tags{display:flex;flex-wrap:wrap;gap:10px}
+.rec-tags a{background:#fff;border:1px dashed #d9d2c7;border-radius:var(--radius-sm);padding:8px 14px;font-size:13.5px;color:var(--ink-2);font-weight:600}
+.rec-tags a:hover{border-style:solid;border-color:var(--main);color:var(--main-dark);text-decoration:none}
+/* 榜单 对照 */
+.rank-board{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--gap)}
+.rank-list{list-style:none;padding:0;margin:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.rank-list li{display:flex;align-items:center;gap:13px;padding:11px 16px;border-bottom:1px solid var(--line);font-size:14px}
+.rank-list li:last-child{border-bottom:0}
+.rank-list .no{flex:0 0 24px;height:24px;border-radius:6px;background:var(--soft);color:var(--ink-2);font-weight:800;font-size:12.5px;display:flex;align-items:center;justify-content:center}
+.rank-list li:nth-child(1) .no{background:var(--main);color:#fff}
+.rank-list li:nth-child(2) .no{background:#f3a08a;color:#fff}
+.rank-list li:nth-child(3) .no{background:#f6c8ba;color:#7a2a13}
+.rank-list .r-name{font-weight:700;color:var(--ink)}
+.rank-list .r-score{margin-left:auto;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.compare{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.compare table{width:100%;border-collapse:collapse;font-size:13px}
+.compare th,.compare td{padding:8px 6px;text-align:left;border-bottom:1px solid var(--line)}
+.compare th{color:var(--muted);font-weight:600;font-size:12px}
+.compare td b{color:var(--ink)}
+/* 创作者证言 */
+.quote-card{background:linear-gradient(135deg,#1f7a6d,#14554b);color:#eaf5f2;border-radius:var(--radius);padding:26px 28px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+.quote-card p{font-size:17px;line-height:1.7;margin:0 0 10px;font-weight:500}
+.quote-card .q-who{font-size:13px;color:#bfe0d9}
+.quote-card .q-mark{font-size:64px;line-height:1;opacity:.35;font-family:Georgia,serif}
+/* 侧栏 返回顶部 */
+.to-top{position:fixed;right:18px;bottom:22px;width:44px;height:44px;border-radius:50%;background:var(--main);color:#fff;border:0;font-size:19px;cursor:pointer;box-shadow:var(--shadow-lift);display:none;align-items:center;justify-content:center;z-index:70;font-family:inherit}
+.to-top.show{display:flex}
+/* 页脚 */
+footer.site{background:#1d2026;color:#c9c4bb;margin-top:30px;font-size:13.5px}
+.ft-inner{max-width:var(--max);margin:0 auto;padding:34px 16px 22px}
+.ft-top{display:grid;grid-template-columns:1.3fr 2fr;gap:30px;padding-bottom:22px;border-bottom:1px solid #33373f}
+.ft-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;color:#fff;margin-bottom:8px}
+.ft-brand svg{width:30px;height:30px}
+.ft-pos{font-size:13px;color:#9a958c;margin:0}
+.ft-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ft-cols h4{font-size:13px;color:#fff;margin:0 0 8px;letter-spacing:.5px}
+.ft-cols ul{list-style:none;padding:0;margin:0}
+.ft-cols li{margin-bottom:6px}
+.ft-cols a{color:#b4afa6;font-size:13px}
+.ft-cols a:hover{color:#fff}
+.ft-note{font-size:12px;color:#8a857c;padding-top:16px;line-height:1.7}
+.ft-note b{color:#b4afa6}
+/* 响应式 */
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr;gap:18px}
+  .hero-art{max-width:440px}
+  .overview-grid{grid-template-columns:repeat(2,1fr)}
+  .grid-cards{grid-template-columns:repeat(2,1fr)}
+  .depth{grid-template-columns:1fr}
+  .comments{grid-template-columns:repeat(2,1fr)}
+  .rank-board{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr}
+  .updates{grid-template-columns:1fr}
+  .quote-card{grid-template-columns:1fr}
+  .quote-card .q-mark{display:none}
+}
+@media(max-width:720px){
+  .hd-inner{padding:9px 14px;gap:10px}
+  nav.mainnav{display:none;order:5;flex-basis:100%;flex-direction:column;align-items:stretch;gap:2px;padding-top:6px}
+  nav.mainnav.open{display:flex}
+  nav.mainnav a{padding:10px 12px;border-radius:var(--radius-sm)}
+  .menu-btn{display:inline-block}
+  .search input{width:104px}
+  .grid-cards{grid-template-columns:1fr}
+  .comments{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .faq{grid-template-columns:1fr}
+  .news{grid-template-columns:1fr}
+  .ft-cols{grid-template-columns:1fr 1fr}
+  .hero-stats{gap:16px}
+  .hero-art .float-card{position:static;margin-top:8px}
+  .overview-grid{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .card:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<a class="skip" href="#maincontent">跳到主要内容</a>
+
+<div class="sticky-wrap">
+  <div class="notice" role="region" aria-label="站内公告">
+    <span class="tag">公告</span>
+    <span>吃瓜51在线每日大赛 11月7日 赛程已上线：今日 6 场对决，19:30「反转剪辑赛」开放观赛通道。</span>
+    <a href="/#latest">查看更新</a>
+  </div>
+  <header class="site">
+    <div class="hd-inner">
+      <a class="brand" href="/#top" aria-label="首页">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#e8532a"/><path d="M14 42c6-18 30-18 36 0" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="24" cy="25" r="4.5" fill="#fff"/><circle cx="40" cy="25" r="4.5" fill="#fff"/><circle cx="24" cy="25" r="1.8" fill="#e8532a"/><circle cx="40" cy="25" r="1.8" fill="#e8532a"/></svg>
+        <span>吃瓜51在线每日大赛<span class="b-sub">DAILY ARENA</span></span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainnav">菜单</button>
+      <nav class="mainnav" id="mainnav" aria-label="主题导航">
+        <a href="/#overview">赛事概览</a>
+        <a href="/#featured">今日精选</a>
+        <a href="/#latest">最新更新</a>
+        <a href="/#channels">频道分类</a>
+        <a href="/#depth">深度解析</a>
+        <a href="/#guide">观赛指南</a>
+        <a href="/#rank">选手榜单</a>
+        <a href="/#faq">常见问答</a>
+      </nav>
+      <div class="hd-tools">
+        <form class="search" id="searchForm" role="search" onsubmit="return false;">
+          <input type="search" id="searchInput" placeholder="搜赛程 / 选手 / 话题" aria-label="站内搜索">
+          <button type="submit" id="searchBtn">搜索</button>
+        </form>
+      </div>
+    </div>
+    <div class="search-result" id="searchResult" aria-live="polite"></div>
+  </header>
+</div>
+
+<main id="maincontent">
+  <!-- 首屏 -->
+  <section class="hero" id="top" aria-labelledby="h1title">
+    <div>
+      <span class="hero-badge">● 每日 19:30 开赛 · 第 46 周</span>
+      <h1 id="h1title">吃瓜51在线每日大赛</h1>
+      <p class="lead">一个把每日对局、参赛作品与赛后复盘摆到台面上的观赛入口。今天有 6 场对决、3 个新赛题，赛程表、规则变动和选手排名都按天整理，错过的场次可以回看录屏与逐条点评。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/#featured">看今日精选</a>
+        <a class="btn btn-ghost" href="/#guide">第一次观赛怎么进</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>6</b>今日场次</div>
+        <div><b>128</b>本周参赛作品</div>
+        <div><b>19:30</b>固定开赛</div>
+        <div><b>第 46 周</b>当前赛季</div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 460 330" role="img" aria-label="赛程示意构图">
+        <rect x="6" y="6" width="448" height="318" rx="22" fill="#fff3ec"/>
+        <rect x="30" y="34" width="240" height="150" rx="14" fill="#ffffff" stroke="#f1d6c8"/>
+        <rect x="30" y="34" width="240" height="34" rx="14" fill="#e8532a"/>
+        <rect x="30" y="52" width="240" height="16" fill="#e8532a"/>
+        <circle cx="52" cy="51" r="6" fill="#fff" opacity=".8"/>
+        <circle cx="72" cy="51" r="6" fill="#fff" opacity=".55"/>
+        <rect x="46" y="86" width="92" height="9" rx="4.5" fill="#f3c9b8"/>
+        <rect x="46" y="106" width="150" height="9" rx="4.5" fill="#efe4dc"/>
+        <rect x="46" y="126" width="120" height="9" rx="4.5" fill="#efe4dc"/>
+        <rect x="46" y="150" width="64" height="20" rx="10" fill="#1f7a6d"/>
+        <rect x="118" y="150" width="64" height="20" rx="10" fill="#eaf3f0"/>
+        <rect x="288" y="34" width="142" height="92" rx="14" fill="#1f7a6d"/>
+        <rect x="304" y="52" width="76" height="9" rx="4.5" fill="#ffffff" opacity=".7"/>
+        <rect x="304" y="72" width="106" height="9" rx="4.5" fill="#ffffff" opacity=".4"/>
+        <rect x="304" y="92" width="60" height="18" rx="9" fill="#ffffff" opacity=".85"/>
+        <rect x="288" y="140" width="142" height="110" rx="14" fill="#ffffff" stroke="#f1d6c8"/>
+        <circle cx="320" cy="172" r="14" fill="#f3c9b8"/>
+        <rect x="344" y="162" width="70" height="8" rx="4" fill="#e6d6cc"/>
+        <rect x="344" y="178" width="48" height="8" rx="4" fill="#efe4dc"/>
+        <rect x="304" y="204" width="110" height="8" rx="4" fill="#efe4dc"/>
+        <rect x="304" y="222" width="86" height="8" rx="4" fill="#efe4dc"/>
+        <rect x="30" y="206" width="240" height="94" rx="14" fill="#ffffff" stroke="#f1d6c8"/>
+        <rect x="46" y="224" width="70" height="8" rx="4" fill="#e8532a" opacity=".55"/>
+        <rect x="46" y="244" width="200" height="8" rx="4" fill="#efe4dc"/>
+        <rect x="46" y="262" width="160" height="8" rx="4" fill="#efe4dc"/>
+        <rect x="46" y="280" width="110" height="8" rx="4" fill="#efe4dc"/>
+      </svg>
+      <div class="float-card fc1">今日焦点<span>反转剪辑赛 · 19:30</span></div>
+      <div class="float-card fc2">赛题更新<span>第 3 题：30 秒悬念开场</span></div>
+    </div>
+  </section>
+
+  <!-- 赛事概览 -->
+  <section class="block" id="overview" aria-labelledby="ov-title">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Overview</div>
+        <h2 id="ov-title">赛事概览：一天几场、怎么计分</h2>
+      </div>
+      <span class="hint">数据截至 11 月 7 日 22:10</span>
+    </div>
+    <div class="overview-grid">
+      <div class="ov-card"><b>6 场</b><span>今日排期</span><p>午后 14:00 一场练习赛，主赛段集中在 19:30—22:00，最长单场 47 分钟。</p></div>
+      <div class="ov-card"><b>128 件</b><span>本周参赛作品</span><p>其中 41 件进入精选池，剪辑类 67 件、解说类 38 件、数据复盘 23 件。</p></div>
+      <div class="ov-card"><b>3 人</b><span>本轮评委</span><p>评委「老猫」「阿屿」「沈一白」轮值，每场给分后当天公开评分表。</p></div>
+      <div class="ov-card"><b>1.8 万</b><span>累计观赛人次</span><p>本周弹幕峰值出现在 11 月 3 日「盲盒选题赛」，单场 4200 人在线。</p></div>
+    </div>
+  </section>
+
+  <!-- 今日精选 -->
+  <section class="block" id="featured" aria-labelledby="ft-title">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Picks</div>
+        <h2 id="ft-title">今日精选内容推荐</h2>
+      </div>
+      <a class="more" href="/#latest">全部更新 →</a>
+    </div>
+    <div class="grid-cards">
+      <article class="card">
+        <figure><img src="https://picsum.photos/seed/guachi-jingxuan-01/640/360" width="640" height="360" loading="lazy" alt="反转剪辑赛选手在剪辑台前操作的画面"></figure>
+        <div class="cbody">
+          <div class="meta"><span class="pill">剪辑赛</span><span>11 月 7 日 19:30</span></div>
+          <h3><a href="/#depth">反转剪辑赛：30 秒内埋两个钩子才进精选池</a></h3>
+          <p>本轮 22 件作品里有 9 件卡在第 12 秒掉完播率，评委给分集中在 7.0—7.8 分。</p>
+        </div>
+      </article>
+      <article class="card">
+        <figure><img src="https://picsum.photos/seed/guachi-jingxuan-02/640/360" width="640" height="360" loading="lazy" alt="数据复盘选手展示折线图的屏幕特写"></figure>
+        <div class="cbody">
+          <div class="meta"><span class="pill g">数据复盘</span><span>11 月 6 日</span></div>
+          <h3><a href="/#rank">数据复盘场：播放完成率的第一名靠的是第 4 秒换镜</a></h3>
+          <p>「苔原」的复盘稿拆了 18 个镜头，平均停留 2.7 秒，评委給出本轮最高 8.6 分。</p>
+        </div>
+      </article>
+      <article class="card">
+        <figure><img src="https://picsum.photos/seed/guachi-jingxuan-03/640/360" width="640" height="360" loading="lazy" alt="解说赛道选手佩戴耳机的录制场景"></figure>
+        <div class="cbody">
+          <div class="meta"><span class="pill y">解说赛道</span><span>11 月 5 日</span></div>
+          <h3><a href="/#news">解说赛道补位赛：语速 260 字/分钟成了新门槛</a></h3>
+          <p>补位赛 14 人报名，最终 5 人晋级，评委「阿屿」在评分表里单列了「信息密度」一项。</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 最新更新 -->
+  <section class="block" id="latest" aria-labelledby="lt-title">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Updates</div>
+        <h2 id="lt-title">最新更新：赛程、规则与作品</h2>
+      </div>
+      <span class="hint">按发布时间排列</span>
+    </div>
+    <div class="updates">
+      <div class="upd"><time datetime="2026-11-08T09:20">今天 09:20</time><div><div class="u-t"><a href="/#featured">第 46 周第 3 日赛程表发布</a></div><div class="u-d">6 场对决，含一场新赛题「盲盒解说」。</div></div></div>
+      <div class="upd"><time datetime="2026-11-07T22:10">昨天 22:10</time><div><div class="u-t"><a href="/#rank">第 45 周周榜结算</a></div><div class="u-d">「苔原」以 8.6 分居首，前五名分差 0.9 分。</div></div></div>
+      <div class="upd"><time datetime="2026-11-07T18:40">昨天 18:40</time><div><div class="u-t"><a href="/#depth">评分细则第 3 版生效</a></div><div class="u-d">完播率权重由 20% 调到 25%，原创度下调 5 个百分点。</div></div></div>
+      <div class="upd"><time datetime="2026-11-06T20:05">11 月 6 日 20:05</time><div><div class="u-t"><a href="/#faq">观赛入口迁移至赛程页</a></div><div class="u-d">旧页面 11 月 9 日起只保留回放。</div></div></div>
+      <div class="upd"><time datetime="2026-11-06T12:30">11 月 6 日 12:30</time><div><div class="u-t"><a href="/#featured">数据复盘场 18 件作品入库</a></div><div class="u-d">其中 6 件附有原始数据表，可直接下载核对。</div></div></div>
+      <div class="upd"><time datetime="2026-11-05T21:15">11 月 5 日 21:15</time><div><div class="u-t"><a href="/#guide">新手观赛指引补充三处说明</a></div><div class="u-d">新增弹幕礼仪、评分申诉窗口、回放有效期。</div></div></div>
+      <div class="upd"><time datetime="2026-11-04T19:50">11 月 4 日 19:50</time><div><div class="u-t"><a href="/#comments">11 月 3 日盲盒选题赛回放上线</a></div><div class="u-d">单场弹幕峰值 4200 条，回放保留 14 天。</div></div></div>
+      <div class="upd"><time datetime="2026-11-03T15:00">11 月 3 日 15:00</time><div><div class="u-t"><a href="/#channels">新增「数据复盘」频道</a></div><div class="u-d">原「其他」频道拆分，历史作品按标签重新归类。</div></div></div>
+    </div>
+  </section>
+
+  <!-- 分类入口 -->
+  <section class="block" id="channels" aria-labelledby="ch-title">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Channels</div>
+        <h2 id="ch-title">分类入口：按赛题与频道找场次</h2>
+      </div>
+    </div>
+    <div class="cat-index">
+      <a href="/#featured">反转剪辑赛 <em>22 件</em></a>
+      <a href="/#featured">盲盒选题赛 <em>16 件</em></a>
+      <a href="/#rank">数据复盘场 <em>18 件</em></a>
+      <a href="/#news">解说补位赛 <em>14 人</em></a>
+      <a href="/#guide">新手练习赛 <em>每日 14:00</em></a>
+      <a href="/#comments">弹幕互动场 <em>周五场</em></a>
+      <a href="/#depth">评委点评合集 <em>9 篇</em></a>
+      <a href="/#rank">周榜与积分 <em>第 46 周</em></a>
+      <a href="/#faq">规则与申诉 <em>3 份文档</em></a>
+      <a href="/#guide">回放与录屏 <em>保留 14 天</em></a>
+      <a href="/#news">赛题预告 <em>提前 1 天</em></a>
+      <a href="/#comments">选手证言 <em>6 条</em></a>
+    </div>
+  </section>
+
+  <!-- 深度解析 -->
+  <section class="block" id="depth" aria-labelledby="dp-title">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Analysis</div>
+        <h2 id="dp-title">深度解析：完播率权重上调之后</h2>
+      </div>
+      <span class="hint">读约 6 分钟</span>
+    </div>
+    <div class="depth">
+      <article class="article">
+        <h3>一、规则改动发生在 11 月 7 日 18:40</h3>
+        <p>第 3 版评分细则把完播率权重从 20% 调到 25%，原创度从 30% 下调到 25%，信息密度维持 25%，表达与节奏合计 25%。细则原文写在赛程页的「规则」折叠块里，版本号 v3，生效时间为 11 月 7 日 18:40。上一版 v2 从 10 月 20 日执行到 11 月 7 日 18:39。</p>
+        <p>这个改动直接改变了剪辑赛的选题策略。以 11 月 6 日数据复盘场为例，完播率最高的「苔原」作品时长 2 分 48 秒，前 4 秒完成两次换镜；而当天排第 7 的「白鲸」作品时长 4 分 12 秒，前半段铺垫了 38 秒才进入正题。按 v2 权重，两者分差为 0.4 分；按 v3 权重，分差扩大到 0.7 分。差别不算悬殊，但对卡在晋级线附近的选手是决定性的。</p>
+        <h3>二、可核对的对比：v2 与 v3 下同一批作品的重算</h3>
+        <table>
+          <thead><tr><th>作品</th><th>时长</th><th>完播率</th><th>v2 折算分</th><th>v3 折算分</th></tr></thead>
+          <tbody>
+            <tr><td>苔原（数据复盘）</td><td>2:48</td><td>71%</td><td>8.2</td><td>8.6</td></tr>
+            <tr><td>白鲸（数据复盘）</td><td>4:12</td><td>48%</td><td>7.8</td><td>7.5</td></tr>
+            <tr><td>林间（反转剪辑）</td><td>0:58</td><td>82%</td><td>7.5</td><td>7.9</td></tr>
+            <tr><td>南岸（解说补位）</td><td>3:05</td><td>55%</td><td>7.9</td><td>7.7</td></tr>
+          </tbody>
+        </table>
+        <p>这组数字来自组委会 11 月 7 日 22:10 公布的评分汇总表，四人作品的原始数据均在各自作品的「数据附件」中可下载。需要注意，折算分只是四项指标按权重相加的结果，评委主观分仍在最终排名里占一栏，所以重算分不等于最终名次。</p>
+        <h3>三、一个可被反驳的判断</h3>
+        <p>判断：完播率权重上调到 25% 以后，长视频在剪辑赛里几乎失去竞争力。这个说法在 2 分钟以内的作品上成立，但放到数据复盘场就站不住。11 月 6 日的复盘场前三名时长分别是 2:48、3:20、3:44，第二名「砺石」的完播率 63%，靠的是把结论前置到第 9 秒、再用 3 段数据支撑。长不是问题，前 30 秒给出可验证的结论才是门槛。反过来说，只要开头交不出结论，1 分钟的作品照样掉到 50% 以下完播率。</p>
+        <blockquote>「阿屿」在 11 月 7 日的评委手记里写：前 15 秒没有具体数字或具体冲突，基本就放在 7 分档。这句话是个人评分习惯，不是细则条文，申诉时不能直接引用。</blockquote>
+        <h3>四、把说法拆成可核对的结构</h3>
+        <dl class="fact-check">
+          <dt>事实</dt><dd>v3 细则 11 月 7 日 18:40 生效，完播率权重 25%，文件编号 R-46-03。</dd>
+          <dt>官方回应</dt><dd>组委会在公告里说明调权重是为了「减少开头注水」，未提及是否回溯重算已结束场次。</dd>
+          <dt>选手转述</dt><dd>「南岸」在评论区表示自己被通知重算，但组委会尚未公开完整重算名单。</dd>
+          <dt>推测</dt><dd>若 11 月 8 日 19:30 的反转剪辑赛按 v3 执行，作品时长中位数会从 1:40 降到 1:20 左右，这一条尚无数据支撑。</dd>
+        </dl>
+      </article>
+      <aside>
+        <div class="aside-card">
+          <h3>时间线：一周内发生了什么</h3>
+          <ul class="timeline">
+            <li><b>11 月 3 日</b>盲盒选题赛开赛，单场弹幕峰值 4200 条。</li>
+            <li><b>11 月 5 日</b>解说补位赛 14 人报名，5 人晋级。</li>
+            <li><b>11 月 6 日</b>数据复盘场 18 件入库，6 件附原始数据。</li>
+            <li><b>11 月 7 日 18:40</b>v3 评分细则生效。</li>
+            <li><b>11 月 7 日 22:10</b>第 45 周周榜结算。</li>
+            <li><b>11 月 8 日 09:20</b>第 46 周第 3 日赛程表发布。</li>
+          </ul>
+        </div>
+        <div class="aside-card">
+          <h3>相关数据卡</h3>
+          <p style="font-size:13.5px;color:var(--ink-2);margin:0 0 8px">本周参赛作品 128 件，进入精选池 41 件，占 32%。剪辑类平均时长 1 分 52 秒，比上周缩短 11 秒。</p>
+          <p style="font-size:13.5px;color:var(--ink-2);margin:0">评分申诉窗口为赛后 24 小时，本周收到 7 份申诉，受理 3 份，改分 1 份。</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 体验指南 -->
+  <section class="block" id="guide" aria-labelledby="gd-title">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Guide</div>
+        <h2 id="gd-title">体验指南：第一次看每日大赛</h2>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><b>先看当天赛程表</b>赛程页每天 09:30 前更新，6 场对决按时间排列，点场次名即可进入观赛通道。练习赛不需要报名，直接进。</li>
+      <li><b>确认赛题版本</b>每个赛题卡片右上角标注 v2 或 v3，11 月 7 日起新开赛题一律 v3，评分表结构不同，看错了会误判选手得分。</li>
+      <li><b>打开评分表</b>每场结束后 30 分钟内公布四项指标原始值，完播率、原创度、信息密度、表达节奏都能逐项对照，附件可下载。</li>
+      <li><b>弹幕与评论</b>弹幕仅在直播时开放，评论保留在作品页下方。涉及选手的负面评价需指明具体镜头或时间点，无依据的会被折叠。</li>
+      <li><b>回放有效期 14 天</b>过期作品只保留评分与文字点评。需要长期参考的，请在有效期内核对自己关心的片段。</li>
+      <li><b>申诉流程</b>赛后 24 小时内提交，附作品链接与具体时间码，组委会 48 小时内回复。本周 7 份申诉受理 3 份，改分 1 份。</li>
+    </ol>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" id="faq" aria-labelledby="fq-title">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">FAQ</div>
+        <h2 id="fq-title">常见问答</h2>
+      </div>
+    </div>
+    <div class="faq">
+      <details><summary>每日大赛一天到底有几场？</summary><div class="ans">常规为 6 场：14:00 一场练习赛，19:30 起主赛段 4 场，22:00 前后一场加赛。11 月 8 日排期就是 6 场，其中「盲盒解说」为本轮新增赛题。</div></details>
+      <details><summary>反转剪辑赛的时长上限是多少？</summary><div class="ans">v3 细则规定 30 秒至 2 分钟，超时作品按每 10 秒扣 0.1 分。11 月 6 日有 3 件作品因超时被扣分，最高扣 0.3 分。</div></details>
+      <details><summary>评分表里的原创度怎么核对？</summary><div class="ans">原创度由评委三人独立打分后取中位数，附在评分汇总表第三列。11 月 7 日公布的表格里，可看到每件作品三位评委的原始分。</div></details>
+      <details><summary>盲盒选题赛的题目什么时候公布？</summary><div class="ans">开赛前 10 分钟在赛程页公布，选手进入赛题页后才会看到具体限制，往期题目在精选内容里可回看。</div></details>
+      <details><summary>数据复盘场要求提交原始数据吗？</summary><div class="ans">不强制，但 11 月 6 日 18 件入库作品中有 6 件附了原始数据表，附表的作品在信息密度一项平均高 0.4 分。</div></details>
+      <details><summary>申诉改分的概率有多大？</summary><div class="ans">本周 7 份申诉受理 3 份，最终改分 1 份。失败原因多为只有结论没有时间码，或引用了评委手记而非细则条文。</div></details>
+      <details><summary>回放过期后还能看到评分吗？</summary><div class="ans">可以。回放保留 14 天，评分与文字点评长期保留在作品页，视频本身过期后不再提供。</div></details>
+      <details><summary>弹幕发言有什么限制？</summary><div class="ans">直播期间开放，单条 40 字以内，重复刷屏会被限流。指向选手的批评需带时间点，例如「第 1 分 12 秒的换镜跳帧」。</div></details>
+    </div>
+  </section>
+
+  <!-- 用户评论 -->
+  <section class="block" id="comments" aria-labelledby="cm-title">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Comments</div>
+        <h2 id="cm-title">用户评论：观众与选手怎么说</h2>
+      </div>
+      <span class="hint">含中性及批评意见</span>
+    </div>
+    <div class="comments">
+      <div class="cmt"><div class="who"><span class="avatar">陆</span><div><b>陆行舟</b> <span>11 月 7 日 22:41</span></div></div><p>「苔原」那支复盘稿确实经得起逐帧看，第 9 秒直接抛结论，后面三段数据都有出处，8.6 分不算虚高。</p><span class="ref">指向：数据复盘场 · 苔原作品</span></div>
+      <div class="cmt"><div class="who"><span class="avatar o">白</span><div><b>白鲸本人</b> <span>11 月 7 日 23:02</span></div></div><p>我的作品被重算掉 0.3 分，规则 18:40 才生效，作品 18:20 就交了。这条得说清楚。</p><span class="ref">指向：评分细则 v3 生效时点</span></div>
+      <div class="cmt"><div class="who"><span class="avatar y">阿</span><div><b>阿屿的观众</b> <span>11 月 7 日 20:15</span></div></div><p>评委手记里那句「前 15 秒没有具体数字就 7 分档」听着挺硬，但手记又不是细则，拿来申诉确实没用。</p><span class="ref">指向：评委手记与细则边界</span></div>
+      <div class="cmt"><div class="who"><span class="avatar g">南</span><div><b>南岸</b> <span>11 月 6 日 21:33</span></div></div><p>解说补位赛的语速门槛设 260 字/分钟，我录到 241，差得不多但就是进不去。这个标准赛前没写明白。</p><span class="ref">指向：解说补位赛门槛</span></div>
+      <div class="cmt"><div class="who"><span class="avatar">林</span><div><b>林间</b> <span>11 月 6 日 19:58</span></div></div><p>58 秒的作品能拿 7.9 分，说明短不是原罪。反倒是 4 分钟还进不了正题的，该好好想想开头。</p><span class="ref">指向：反转剪辑赛时长策略</span></div>
+      <div class="cmt"><div class="who"><span class="avatar y">橘</span><div><b>橘子汽水</b> <span>11 月 5 日 22:20</span></div></div><p>回放只留 14 天有点短。11 月 3 日那场盲盒赛我想再看一遍，结果已经找不到了。</p><span class="ref">指向：回放有效期</span></div>
+      <div class="cmt"><div class="who"><span class="avatar">老</span><div><b>老猫评分观察</b> <span>11 月 5 日 20:06</span></div></div><p>评委三人取中位数的做法比平均分稳，至少不会被一个极端分带跑，这点比很多同类赛事做得好。</p><span class="ref">指向：原创度中位数计分</span></div>
+      <div class="cmt"><div class="who"><span class="avatar o">元</span><div><b>元气橘子</b> <span>11 月 4 日 19:47</span></div></div><p>说实话，盲盒赛题目公布得太晚，赛前 10 分钟才看到限制，准备时间根本不够。</p><span class="ref">指向：盲盒选题赛赛制</span></div>
+      <div class="cmt"><div class="who"><span class="avatar g">七</span><div><b>七号看台</b> <span>11 月 4 日 21:12</span></div></div><p>练习赛没人看是事实，但 14:00 那场反而能看到选手试错，比正赛真实，我每期都蹲。</p><span class="ref">指向：新手练习赛</span></div>
+    </div>
+  </section>
+
+  <!-- 相关资讯 -->
+  <section class="block" id="news" aria-labelledby="nw-title">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">News</div>
+        <h2 id="nw-title">相关资讯</h2>
+      </div>
+    </div>
+    <div class="news">
+      <article>
+        <div class="n-meta"><span class="pill">赛制</span><span>11 月 8 日 09:20</span></div>
+        <h3><a href="/#latest">第 46 周第 3 日赛程表发布，新增盲盒解说</a></h3>
+        <p>6 场对决里第 5 场为新增赛题，限制条件是解说稿不得出现形容词，违者扣 0.2 分。</p>
+      </article>
+      <article>
+        <div class="n-meta"><span class="pill g">榜单</span><span>11 月 7 日 22:10</span></div>
+        <h3><a href="/#rank">第 45 周周榜结算，前五名分差 0.9 分</a></h3>
+        <p>「苔原」8.6 分居首，「砺石」8.2 分次之，第三到第五名分别为 8.0、7.9、7.7 分。</p>
+      </article>
+      <article>
+        <div class="n-meta"><span class="pill y">赛制</span><span>11 月 7 日 18:40</span></div>
+        <h3><a href="/#depth">评分细则 v3 生效，完播率权重上调至 25%</a></h3>
+        <p>原创度下调至 25%，文件编号 R-46-03，已结束场次是否回溯重算尚未公开完整名单。</p>
+      </article>
+      <article>
+        <div class="n-meta"><span class="pill">入口</span><span>11 月 6 日 20:05</span></div>
+        <h3><a href="/#faq">观赛入口迁移至赛程页，旧页面只保留回放</a></h3>
+        <p>11 月 9 日起旧链接不再提供直播入口，收藏夹里的地址需要更新。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 榜单与对照 -->
+  <section class="block" id="rank" aria-labelledby="rk-title">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Ranking</div>
+        <h2 id="rk-title">选手榜单与两赛题对照</h2>
+      </div>
+    </div>
+    <div class="rank-board">
+      <div>
+        <ol class="rank-list">
+          <li><span class="no">1</span><span class="r-name">苔原</span><span class="r-score">8.6 分 · 数据复盘</span></li>
+          <li><span class="no">2</span><span class="r-name">砺石</span><span class="r-score">8.2 分 · 数据复盘</span></li>
+          <li><span class="no">3</span><span class="r-name">林间</span><span class="r-score">8.0 分 · 反转剪辑</span></li>
+          <li><span class="no">4</span><span class="r-name">南岸</span><span class="r-score">7.9 分 · 解说补位</span></li>
+          <li><span class="no">5</span><span class="r-name">白鲸</span><span class="r-score">7.7 分 · 数据复盘</span></li>
+        </ol>
+      </div>
+      <div class="compare">
+        <table>
+          <thead><tr><th>维度</th><th>反转剪辑赛</th><th>数据复盘场</th></tr></thead>
+          <tbody>
+            <tr><td>时长上限</td><td><b>2 分钟</b></td><td><b>5 分钟</b></td></tr>
+            <tr><td>核心指标</td><td>完播率、节奏</td><td>信息密度、原创度</td></tr>
+            <tr><td>本周件数</td><td>22 件</td><td>18 件</td></tr>
+            <tr><td>平均分</td><td>7.4</td><td>7.8</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:12.5px;color:var(--muted);margin:10px 0 0">数据来自 11 月 7 日 22:10 公布的评分汇总表，平均分保留一位小数。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 相关推荐 -->
+  <section class="block" id="rec" aria-labelledby="rc-title">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Related</div>
+        <h2 id="rc-title">相关推荐</h2>
+      </div>
+    </div>
+    <div class="rec-tags">
+      <a href="/#depth">完播率权重变化</a>
+      <a href="/#featured">反转剪辑赛高分作品</a>
+      <a href="/#rank">数据复盘场排名</a>
+      <a href="/#news">解说补位赛晋级名单</a>
+      <a href="/#guide">盲盒选题赛怎么准备</a>
+      <a href="/#faq">评分申诉材料清单</a>
+      <a href="/#comments">第 45 周周榜讨论</a>
+      <a href="/#latest">11 月 8 日赛程表</a>
+      <a href="/#depth">评委手记与细则差异</a>
+      <a href="/#guide">回放 14 天保留规则</a>
+    </div>
+  </section>
+
+  <!-- 创作者证言 -->
+  <section class="block" id="voices" aria-labelledby="vc-title">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Voices</div>
+        <h2 id="vc-title">参赛者证言</h2>
+      </div>
+    </div>
+    <div class="quote-card">
+      <div>
+        <p>「林间」在 11 月 6 日的复盘里说：58 秒的作品能进前三，是因为把第二个钩子放在了第 11 秒，而不是拖到结尾。时长不是评委看的第一眼，前 15 秒有没有具体冲突才是。</p>
+        <div class="q-who">—— 林间 · 反转剪辑赛参赛选手，11 月 6 日作品点评页留言</div>
+      </div>
+      <div class="q-mark" aria-hidden="true">”</div>
+    </div>
+  </section>
+
+  <!-- 补充：赛题时间线 -->
+  <section class="block" id="schedule" aria-labelledby="sc-title">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Schedule</div>
+        <h2 id="sc-title">本周赛题节奏</h2>
+      </div>
+      <span class="hint">11 月 2 日—11 月 8 日</span>
+    </div>
+    <div class="updates">
+      <div class="upd"><time datetime="2026-11-02">11 月 2 日</time><div><div class="u-t">第 45 周开赛，练习赛恢复每日 14:00 排期</div><div class="u-d">首日 4 场，参赛 19 件。</div></div></div>
+      <div class="upd"><time datetime="2026-11-03">11 月 3 日</time><div><div class="u-t">盲盒选题赛单场弹幕峰值 4200 条</div><div class="u-d">题目赛前 10 分钟公布，限制为「不得使用旁白」。</div></div></div>
+      <div class="upd"><time datetime="2026-11-04">11 月 4 日</time><div><div class="u-t">11 月 3 日回放上线，保留 14 天</div><div class="u-d">回放页附三位评委原始打分。</div></div></div>
+      <div class="upd"><time datetime="2026-11-05">11 月 5 日</time><div><div class="u-t">解说补位赛 14 人报名，5 人晋级</div><div class="u-d">评分表新增「信息密度」单列。</div></div></div>
+      <div class="upd"><time datetime="2026-11-06">11 月 6 日</time><div><div class="u-t">数据复盘场 18 件入库，6 件附原始数据</div><div class="u-d">平均分 7.8，最高 8.6。</div></div></div>
+      <div class="upd"><time datetime="2026-11-07">11 月 7 日</time><div><div class="u-t">v3 细则生效，第 45 周周榜结算</div><div class="u-d">前五名分差 0.9 分。</div></div></div>
+      <div class="upd"><time datetime="2026-11-08">今天 09:20</time><div><div class="u-t">第 46 周第 3 日赛程表发布</div><div class="u-d">6 场对决，19:30 反转剪辑赛开赛。</div></div></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site" id="sitefooter">
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div>
+        <div class="ft-brand">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#e8532a"/><path d="M14 42c6-18 30-18 36 0" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="24" cy="25" r="4.5" fill="#fff"/><circle cx="40" cy="25" r="4.5" fill="#fff"/></svg>
+          吃瓜51在线每日大赛
+        </div>
+        <p class="ft-pos">每天把赛程、评分表和回放入口摊开，看完一场能说清谁赢在哪一秒。</p>
+      </div>
+      <div class="ft-cols">
+        <div>
+          <h4>赛程与作品</h4>
+          <ul>
+            <li><a href="/#latest">今日赛程表</a></li>
+            <li><a href="/#featured">精选作品</a></li>
+            <li><a href="/#rank">周榜与积分</a></li>
+            <li><a href="/#channels">频道分类</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>规则与指南</h4>
+          <ul>
+            <li><a href="/#depth">评分细则解析</a></li>
+            <li><a href="/#guide">首次观赛指南</a></li>
+            <li><a href="/#faq">申诉与回放</a></li>
+            <li><a href="/#schedule">本周赛题节奏</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>社区</h4>
+          <ul>
+            <li><a href="/#comments">观众评论</a></li>
+            <li><a href="/#voices">参赛者证言</a></li>
+            <li><a href="/#news">相关资讯</a></li>
+            <li><a href="/#rec">相关推荐</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="ft-note">
+      <p><b>示例数据说明：</b>页面中的选手名、作品数、评分与时间为演示用示例数据，规则与日期按 2026 年 11 月 8 日前 30 天内的示例排期生成，不代表真实赛事结果。页脚更新时间 2026-11-08 09:20，对应正文「第 46 周第 3 日赛程表发布」一项。</p>
+      <p>© 2026 吃瓜51在线每日大赛 · 赛程与作品内容仅作展示，评分以官方公布表格为准。</p>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="返回顶部">↑</button>
+
+<script>
+(function(){
+  var menuBtn=document.getElementById('menuBtn');
+  var nav=document.getElementById('mainnav');
+  if(menuBtn&&nav){
+    menuBtn.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded',open?'true':'false');
+    });
+    nav.addEventListener('click',function(e){
+      if(e.target.tagName==='A'&&window.innerWidth<=720){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+  var toTop=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>420){toTop.classList.add('show');}else{toTop.classList.remove('show');}
+  },{passive:true});
+  toTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+  /* 本地搜索：扫描主内容里的链接文本 */
+  var input=document.getElementById('searchInput');
+  var btn=document.getElementById('searchBtn');
+  var out=document.getElementById('searchResult');
+  var items=[];
+  document.querySelectorAll('main a[href^="/#"], .rank-list li, .cat-index a').forEach(function(el){
+    var t=(el.textContent||'').replace(/\s+/g,' ').trim();
+    if(!t)return;
+    var href=el.tagName==='A'?el.getAttribute('href'):(el.querySelector('a')?el.querySelector('a').getAttribute('href'):'/#maincontent');
+    items.push({text:t,href:href});
+  });
+  function doSearch(){
+    var q=(input.value||'').trim().toLowerCase();
+    if(!q){out.textContent='';return;}
+    var hits=[],seen={};
+    items.forEach(function(it){
+      if(it.text.toLowerCase().indexOf(q)>-1&&!seen[it.text]){
+        seen[it.text]=1;hits.push(it);
+      }
+    });
+    if(!hits.length){
+      out.innerHTML='没有找到与「<b>'+q.replace(/[<>]/g,'')+'</b>」相关的赛程或条目，可以试试「反转剪辑赛」「评分细则」「回放」等词。';
+      return;
+    }
+    out.innerHTML='找到 '+hits.length+' 条：'+hits.slice(0,6).map(function(h){
+      return '<a href="'+h.href+'">'+h.text+'</a>';
+    }).join(' · ');
+  }
+  input.addEventListener('input',doSearch);
+  btn.addEventListener('click',doSearch);
+  /* 平滑滚动偏移由 CSS scroll-padding-top 处理 */
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"吃瓜51在线每日大赛",
+  "description":"每日赛程、参赛作品、评分表与观赛指南汇总。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"每日大赛一天到底有几场？","acceptedAnswer":{"@type":"Answer","text":"常规为6场：14:00一场练习赛，19:30起主赛段4场，22:00前后一场加赛。"}},
+    {"@type":"Question","name":"反转剪辑赛的时长上限是多少？","acceptedAnswer":{"@type":"Answer","text":"v3细则规定30秒至2分钟，超时作品按每10秒扣0.1分。"}},
+    {"@type":"Question","name":"评分表里的原创度怎么核对？","acceptedAnswer":{"@type":"Answer","text":"原创度由三位评委独立打分后取中位数，附在评分汇总表第三列。"}},
+    {"@type":"Question","name":"盲盒选题赛的题目什么时候公布？","acceptedAnswer":{"@type":"Answer","text":"开赛前10分钟在赛程页公布，选手进入赛题页后才会看到具体限制。"}},
+    {"@type":"Question","name":"数据复盘场要求提交原始数据吗？","acceptedAnswer":{"@type":"Answer","text":"不强制，但附带原始数据表的作品在信息密度一项平均高0.4分。"}},
+    {"@type":"Question","name":"申诉改分的概率有多大？","acceptedAnswer":{"@type":"Answer","text":"本周7份申诉受理3份，最终改分1份，失败原因多为缺少时间码或引用评委手记。"}}
+  ]
+}
+</script>
+</body>
+  </html>
